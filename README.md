@@ -6,43 +6,52 @@ DelayedThread constructs threads with delayed execution.
 Usage
 -----
 
-    d = DelayedThread.new
-    
-Add a delayed thread
+```ruby
 
-    d.delayed_thread do
-      5.times do |x|
-        puts x.to_s
-        sleep 1
-      end
-    end
+d = DelayedThread.new
 
-Add another delayed thread
+# Add a delayed thread
 
-    d.delayed_thread do
-      5.times do |x|
-        puts (x * 2).to_s
-        sleep 1
-      end
-    end
-    
-wait some time
+d.delayed_thread do
+  5.times do |x|
+    puts x.to_s
+    sleep 1
+  end
+end
 
-    sleep 2
-    
-start delayed thread execution
+# Add another delayed thread
 
-    d.start
-    
-join delayed threads
+d.delayed_thread do
+  5.times do |x|
+    puts (x * 2).to_s
+    sleep 1
+  end
+end
 
-    d.join
+# wait some time
+
+sleep 2
+
+# start delayed thread execution
+
+d.start
+
+# join delayed threads
+
+d.join
+
+
+```
 
 Do not delay threads
 
-    d.delayed = false
+```ruby
+d.delayed = false
+```
     
-Get list of delyaed threads
+Get list of delayed threads
 
-    d.threads # => Array
+```ruby
+d.threads # => Array
+```
     
